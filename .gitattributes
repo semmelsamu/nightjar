@@ -1,0 +1,2 @@
+audio_generation/rave_midpoints/model/*.ckpt.ts filter=lfs diff=lfs merge=lfs -text
+audio_generation/rave_midpoints/audio/*.wav filter=lfs diff=lfs merge=lfs -text

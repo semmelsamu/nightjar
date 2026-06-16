@@ -4,7 +4,7 @@ This repository contains the Audio creation for the Nightjar project.
 
 The Jupyter notebook ``nightjar_music_generation_rave.ipynb`` contains the steps to generate audio with the pretrained RAVE-model.
 
-The scripts used to train the RAVE-model can be found in ``rave``.
+The scripts used to train the RAVE-model can be found in the ``rave/`` folder.
 
 ## Requirements
 

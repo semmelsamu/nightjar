@@ -2,3 +2,4 @@
 .latent_cache
 venv
 epoch_2000000.ckpt.ts
+/audio_generation/data

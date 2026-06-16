@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+librosa
+soundfile
+tqdm
+ipython
+scikit-learn
+torch
+nbstripout # removes jupyter plots

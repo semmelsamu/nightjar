@@ -2,3 +2,5 @@
 .latent_cache
 venv
 epoch_2000000.ckpt.ts
+.DS_Store
+**/.DS_Store

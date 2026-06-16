@@ -16,7 +16,7 @@ To use this repository, you need two external files/folders (ask @RosieG for acc
     - ``nj_output`` (empty folder to save the output to)
     - ``nj_training_data`` (processed training data; used for visualizations)
 
-Copy both into the root of this repository.
+Copy both into the folder ``audio_generation``.
 
 These files are not included in GitHub because they are too large.
 

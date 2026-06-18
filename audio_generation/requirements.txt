@@ -9,3 +9,4 @@ scikit-learn
 torch
 nbstripout # removes jupyter plots
 plotly
+torchinfo

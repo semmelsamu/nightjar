@@ -1,4 +1,5 @@
-data/output/*
+/data/output/*
+!/data/output/.gitkeep
 
 /data/training_data/*
 !/data/training_data/.gitkeep

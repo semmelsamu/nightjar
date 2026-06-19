@@ -1,2 +1,5 @@
 /data/training_data/*
+!/data/training_data/.gitkeep
+
 /data/unprepared_data/*
+!/data/unprepared_data/.gitkeep

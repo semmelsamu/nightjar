@@ -1,9 +1,8 @@
-# 🐦 Nightjar – Audio Generation
+# 🐦 RAVE
 
-This part of the Nightjar project is focused on generating audio inspired by bird sounds and nature-influenced music using a RAVE model. 
+This part of the Nightjar project is focused on generating training data and training a RAVE model.
 
-The following explains how to train the RAVE model on a pre-defined dataset and how to apply
-the trained model to generate sounds.
+The trained model can then be applied in the section ``audio_generation/``.
 
 ---
 
@@ -11,16 +10,18 @@ the trained model to generate sounds.
 
 All training data is stored in the `data/` directory.
 
-Because the dataset is too large to store on GitHub, please ask @RosieG for access. Once downloaded, place the dataset inside the `rave/` folder as shown below:
+Because the dataset is too large to store on GitHub, please ask @RosieG for access. Once downloaded, unzip and place the dataset inside the `rave/data/unprepared` folder. 
 
 ```text
 rave/
 └── data/
     └── unprepared_data/
-    └── prepared_data/
+        └── kaggle_birds_data/
+        └── song_data/
 ```
+A files for the folder ``training_data`` will be generated automatically once you run ``generate_training_data.ipynb``.
 
-The ``data/`` folder organized into two main subfolders:
+Therefore the ``data/`` folder is organized into two main subfolders:
 
 ### 🔹 `unprepared_data/`
 

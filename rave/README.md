@@ -1,9 +1,8 @@
-# 🐦 Nightjar – Audio Generation
+# 🐦 RAVE
 
-This part of the Nightjar project is focused on generating audio inspired by bird sounds and nature-influenced music using a RAVE model. 
+This part of the Nightjar project is focused on generating training data and training a RAVE model.
 
-The following explains how to train the RAVE model on a pre-defined dataset and how to apply
-the trained model to generate sounds.
+The trained model can then be applied in the section ``audio_generation/``.
 
 ---
 
@@ -11,26 +10,28 @@ the trained model to generate sounds.
 
 All training data is stored in the `data/` directory.
 
-Because the dataset is too large to store on GitHub, please ask @RosieG for access. Once downloaded, place the dataset inside the `rave/` folder as shown below:
+Because the dataset is too large to store on GitHub, please ask @RosieG for access. Once downloaded, unzip and place the dataset inside the `rave/data/unprepared` folder. 
 
 ```text
 rave/
 └── data/
     └── unprepared_data/
-    └── prepared_data/
+        └── kaggle_birds_data/
+        └── song_data/
 ```
+A files for the folder ``training_data`` will be generated automatically once you run ``generate_training_data.ipynb``.
 
-The ``data/`` folder organized into two main subfolders:
+Therefore the ``data/`` folder is organized into two main subfolders:
 
 ### 🔹 `unprepared_data/`
 
 Contains raw, unprocessed datasets:
 
-* `kaggle_birds_data.zip`
+* `kaggle_birds_data`
   Bird sound recordings from Kaggle
   https://www.kaggle.com/datasets/soumendraprasad/sound-of-114-species-of-birds-till-2022
 
-* `song_data.zip`
+* `song_data`
   Songs by Cosmo Sheldrake, which incorporate and are inspired by natural and bird sounds.
   The objective of this project is to generate similar music.
 
@@ -38,22 +39,15 @@ Contains raw, unprocessed datasets:
 
 ### 🔹 `training_data/`
 
-Is generated from the unprepared data and will be used for training the model. To generate, run the following scripts:
-
-
-```bash
-python scripts/step1_prepare_birds.py
-python scripts/step2_prepare_songs.py
-python scripts/step3_unify_data.py
-```
-
-These three preprocessing steps do the following:
+Is generated in the notebook ``generate_training_data.ipynb``. The main steps include
 
 #### a) Bird Dataset Processing
 
 * Randomly selected **3 recordings per species**
 * Trimmed to a maximum of **20 seconds**
 * Converted to **mono `.wav` format**
+* Resampling to 44100 (if necessary)
+* Normalized audio levels
 
 #### b) Song Dataset Processing
 
@@ -67,40 +61,19 @@ These three preprocessing steps do the following:
   This yields ~3x as many song snippets.
 * Discarded segments shorter than **5 seconds**
 * Converted to **mono `.wav` format**
+* Resampling to 44100 (if necessary)
+* Normalized audio levels
+
 
 Intermediate outputs from step a) and b) are stored in:
 
 ```
-data/unprepared_data/preprocessing_steps12/
+data/unprepared_data/intermediate_data/
 ```
 
-
-#### c) Dataset Unification
-
-* Determined the most common **sampling rate**
-* Resampled all files to match this rate
-* Ensured consistency:
-
-  * Mono channel
-  * `.wav` format
-  * Normalized audio levels
-
-
-
-#### Expected Output
-
+The generated training data is saved in 
 ```
-=== VERIFICATION ===
-Total files        : 504
-Sample rates found : {44100: 504}
-Channel counts     : {1: 504}
-Total duration     : 144.0 min
-  └ birds          : 89.2 min
-  └ songs          : 54.8 min
-
-✔ All files are 44100 Hz mono WAV.
-
-Done. Output → data/training_data
+data/training_data
 ```
 
 > ⚠️ **Note:** RAVE requires at least **1 hour of audio** for training. More data is recommended.
@@ -182,7 +155,7 @@ scp <user_name>@<host>:~/model_output/.../epoch_100000.ckpt.ts ~/Downloads/
 
 ## 4. Applying the Model
 
-After exporting, load the model into the folder ``audio_generation`` and run ``audio_generation/nightjar_music_generation_rave.ipynb`` as needed.
+After exporting, copy the model into the folder ``audio_generation`` and run ``audio_generation/nightjar_music_generation_rave.ipynb`` as needed.
 
 ---
 

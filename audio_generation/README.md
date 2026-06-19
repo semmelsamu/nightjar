@@ -1,22 +1,17 @@
-# Nightjar Audio
+# Audio Generation
 
-This repository contains the Audio creation for the Nightjar project.
+This directory contains the Audio creation part for the Nightjar project.
 
 The Jupyter notebook ``nightjar_music_generation_rave.ipynb`` contains the steps to generate audio with the pretrained RAVE-model.
 
-The scripts used to train the RAVE-model can be found in the ``rave/`` folder.
+Information on how we trained the RAVE-model can be found in the ``rave/`` folder.
 
 ## Requirements
 
-To use this repository, you need two external files/folders (ask @RosieG for access):
+To use the notebook, you need two external files/folders (ask @RosieG for access):
 
-* `epoch_2000000.ckpt.ts` — the trained model checkpoint
-* `data/` — the dataset folder used for audio generation. It contains three subfolders: 
-    - ``nj_music_generation_data`` (audio used specifically to generate audio, i. e. anchors used in latent space)
-    - ``nj_output`` (empty folder to save the output to)
-    - ``nj_training_data`` (processed training data; used for visualizations)
-
-Copy both into the folder ``audio_generation``.
+* a trained RAVE model of type ``*.ts``. Copy the model into ``audio_generation/models``.
+* `training_data` — the (training) data used visualization and for audio generation. This is the generated dataset from the ``rave/`` directory
 
 These files are not included in GitHub because they are too large.
 

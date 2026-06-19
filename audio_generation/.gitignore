@@ -1,0 +1,7 @@
+data/output/*
+
+/data/training_data/*
+!/data/training_data/.gitkeep
+
+/models/*
+!/models/.gitkeep

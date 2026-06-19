@@ -1,7 +1,5 @@
-/rave/data/
 .latent_cache
 venv
-epoch_2000000.ckpt.ts
+.venv
 .DS_Store
 **/.DS_Store
-/audio_generation/data

@@ -46,4 +46,5 @@ nbstripout --install
 ```
 
 After this, notebook outputs such as plots, images, and large embedded data will be removed automatically when committing.
+Alternatively, apply "Clear All Outputs" in the Notebook.
 

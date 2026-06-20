@@ -165,3 +165,15 @@ After exporting, copy the model into the folder ``audio_generation`` and run ``a
   https://forum.ircam.fr/article/detail/training-rave-models-on-custom-data/
 
 ---
+
+## Jupyter notebooks
+
+Please do **not** upload Jupyter notebooks with plots or other outputs, as they make the files too large.
+
+Before committing notebooks, enable `nbstripout`:
+
+```bash
+nbstripout --install
+```
+
+After this, notebook outputs such as plots, images, and large embedded data will be removed automatically when committing.

@@ -1,4 +1,4 @@
-# 🐦 RAVE
+# RAVE
 
 This part of the Nightjar project is focused on generating training data and training a RAVE model.
 

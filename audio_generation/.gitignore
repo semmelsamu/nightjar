@@ -6,3 +6,8 @@
 
 /models/*
 !/models/.gitkeep
+
+# Local-only data: too large and partly copyrighted, kept outside the repo
+/data/nj_training_data/
+/data/nj_music_generation_data/
+/*.ckpt.ts
